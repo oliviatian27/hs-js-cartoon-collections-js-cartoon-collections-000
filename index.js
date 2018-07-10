@@ -1,29 +1,25 @@
 function dwarfRollCall(dwarves) {
-	var newString = "";
-  for (var i = 0; i < dwarves.length; i++) {
-   newString += (i+1).toString()+ ". " + dwarves[i] + " ";
-  }
-  return newString;
-}
+var result= dwarves.map(function(value,index){
+   return (index+1).toString()+'. '+value+' ';
+  });
+ return result.join('');
+ }
+
+
 function summonCaptainPlanet(planeteerCalls){
- var newArray = [];
-  for (var i = 0; i < planeteerCalls.length; i++) {
-   newArray.push(planeteerCalls[i] + "!");
-  }
-  return newArray;
+ return planeteerCalls.map(x=>
+ x.toUpperCase()+'!');
 }
+
 function longPlaneteerCalls(words) {
-  for (var i=0;i<words.length;i++){
-    if (words[i].length>4){
-      return true;
-    }
-  }return false;
+  return words.some(x=>x.length>4 );
 }
 
 function findTheCheese(food){
-  for (var i=0;i<food.length;i++){
-     if(food[i]=="cheddar"||food[i]=="gouda"||food[i]=="camembert"){
-       return food[i];
-     }
-  }return "no cheese!";
+  var cheese=['cheddar','gouda','camembert'];
+  var result=food.filter(x=>cheese.indexOf(x)!=-1);
+ if (result.length>0){
+   return result[0];
+ }
+  return "no cheese!";
 }
