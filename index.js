@@ -16,9 +16,9 @@ function longPlaneteerCalls(words) {
 
 function findTheCheese(food){
   var cheese=['cheddar','gouda','camembert'];
-  var result=food.filter(x=>cheese.indexOf(x)!=-1);
-  if (result.length>0){
-   return result[0];
+  var result=food.find(x=>cheese.indexOf(x)!=-1);
+  if (result){
+   return result;
     }
   return "no cheese!";
  }
